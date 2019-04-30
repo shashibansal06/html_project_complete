@@ -1,0 +1,260 @@
+.btn{
+    &.link{
+        @include text-format(20px, $blue-color);
+        background-color: transparent;
+        padding: 0;
+        text-transform: uppercase;
+    }
+}
+.btnOuter {
+    .btnInner {
+        @include display(middle);
+
+        width: 212px;
+
+        @include pos(r, null);
+
+    }
+}
+
+
+.buttonClipMask {
+    display: inline-block;
+
+    @include clip-path(url("#buttonClipBorder"));
+
+    background-color: #ccc;
+
+    @include transition(all 0.4s);
+
+    & > * {
+        @include transition(all 0.4s);
+    }
+
+    &:hover {
+        background-color: #eee;
+
+        .button {
+            background-color: #eee;
+        }
+    }
+
+    .button {
+        @include clip-path(url("#buttonClipInner"));
+        background-color: #ccc;
+        display: inline-block;
+        padding: 0 10px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        @include text-format(17px, #000);   
+        &[disabled="disabled"]{
+            opacity: 0.5;
+        }     
+        &.button-min-160 {
+            width: 160px;
+            @media screen and (max-width:479px) {
+                width:100%;
+            }
+        }
+        
+        &.button-normal {
+            height: 50px;
+        }
+
+        &.text-uppercase {
+            text-transform: uppercase;
+        }
+
+        &.button-bold {
+            font-weight: 700;
+        }
+    }
+
+    &.mask-highlight {
+        background-color: $white;
+
+        .button {
+            background-color: $orange;
+            color: $white;
+        }
+
+        &:hover {
+            background-color: darken($orange, 10%);
+
+            .button {
+                background-color: lighten($orange, 10%);
+            }
+        }
+    }
+
+    &.mask-primary {
+        background-color: #fff;
+
+        .button {
+            background-color: $blueBG;
+            color: $white;
+        }
+
+        &:hover {
+            background-color: darken($blueBG, 10%);
+
+            .button {
+                background-color: lighten($blueBG, 10%);
+            }
+        }
+    }
+}
+
+.buttonBorderless {
+    @include clip-path(url("#buttonClipBorderless"));
+
+    @include transition(all 0.4s);
+
+    background-color: #ccc;
+    display: inline-block;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: none;
+    &[disabled="disabled"]{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }  
+    &.button-large {
+        height: 60px;
+        line-height: 60px;
+        padding: 0 25px;
+        font-weight: 700;
+        font-size: 20px;
+        @media screen and (max-width:1200px) {
+            font-size: 16px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 10px;
+        }
+    }   
+    &.button-min-220 {
+        min-width: 220px;
+        @media screen and (max-width:1200px) {
+            min-width: 180px;
+        }
+        @media screen and (max-width:479px) {
+            width:100%;
+        }
+    }
+    &.button-min-165 {
+        min-width: 165px;
+        @media screen and (max-width:1200px) {
+            min-width: 160px;
+        }
+        @media screen and (max-width:479px) {
+            width:100%;
+        }
+    }
+    &.button-100perc {
+        min-width: 100%;
+    }
+    &.button-min-145 {
+        width: 145px;
+        @media screen and (max-width:479px) {
+            width:100%;
+        }
+    }
+
+    &.button-block {
+        display: block;
+        width: 100%;
+    }
+
+    &.button-danger {
+        background-color: $red;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($red, 10%);
+        }
+    }
+    &.button-success {
+        background-color: $btngreen;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($btngreen, 10%);
+        }
+    }
+    &.button-purple {
+        background-color: $purple;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($purple, 10%);
+        }
+    }
+    &.button-orange {
+        background-color: $orange;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($orange, 10%);
+        }
+    }
+
+    &.button-plain {
+        background-color: $white;
+        color: $green;
+
+        &:hover {
+            background-color: darken($white, 10%);
+        }
+    }
+
+    &.button-primary {
+        background-color: $blueBG;
+        color: $white;
+        @media screen and (max-width:479px) {
+            display: block;
+        }
+        &:hover {
+            background-color: lighten($blueBG, 10%);
+        }
+    }
+    &.button-yellow {
+        background-color: $lightYellow;
+        color: $black;
+
+        &:hover {
+            background-color: lighten($lightYellow, 10%);
+        }
+    }
+
+    &.button-hover-green {
+        &:hover {
+            background-color: $green !important;
+            color: $white !important;
+        }
+    }
+
+    &.button-action {
+        background-color: $green;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($green, 10%);
+        }
+    }
+
+    &.button-action-light {
+        background-color: $parrot;
+        color: $darkgreen1;
+
+        &:hover {
+            background-color: darken($parrot, 10%);
+        }
+    }
+
+    &.mask2 {
+        @include clip-path(url("#largeButtonClip"));
+    }
+}

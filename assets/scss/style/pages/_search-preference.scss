@@ -1,0 +1,90 @@
+.inputfeildPage{
+	&.searchPreferncePage {
+	    .top-row {	    	
+	      	.right {
+                span {                	
+                    text-decoration: underline;                   
+                }  
+            }
+	    }
+	    .simpleInputSection{
+            .left{
+                @media screen and (max-width: 1200px) {
+                    text-align: center;
+                }
+                .profilePhoto {
+                    @include height-width(150px, 140px);
+                    display: inline-block;
+                    .imgOute{
+                        @include radius(0px);
+                        height: 100%; 
+                        background-color: transparent;
+                        img {
+                            @include clip-path(url("#circleImage"));
+                            height: 100%;
+                            object-fit: cover;
+                            min-width: 100%;
+                        }
+                    }      
+                }
+            }
+            .feildSet {           
+                .form-group {
+                    margin-bottom: 30px;
+                    label{
+                        margin-bottom: 0;
+                    }
+                    input,select,textarea{
+                        &.form-control{
+                            background-color: transparent;
+                            border-left: 0 none;
+                            border-bottom: 1px solid $white;
+                            border-top:0 none;
+                            border-right:0 none;
+                            @include radius(0px);
+                            @include text-format-size(22px,$white,700);
+                            padding: 0 0 20px 0;
+                            height: auto;
+                            @media screen and (max-width: 1200px) {
+                                font-size: 16px;
+                                padding-bottom: 15px;                                
+                            }
+                            &:focus{
+                                border-color:$white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+	    .feildSet {
+	        .form-group {
+	            @include pos(r, null);
+	            .amentiDetail{
+                	ul{
+                		li{
+                			text-align: center;
+                            @include text-format-size(18px,$white,400);
+                			margin-right: 15px;
+                            @media screen and (max-width: 992px) {
+                                font-size: 14px;
+                                margin-right: 0px;
+                                padding: 0;
+                            }
+
+                			i{
+                				display: inline-block;
+                				width: 100%;
+                				font-size: 40px;
+                				margin-bottom: 10px;
+                                @media screen and (max-width: 992px) {
+                                    font-size: 20px;
+                                }
+                			}                			
+                		}
+                	}
+                }	                    
+	        }
+	    }       
+	}
+}

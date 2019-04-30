@@ -1,0 +1,364 @@
+.main-inner {
+	.pageheaderTop{
+		&.searchPageheader{
+		.right{
+			text-align: right;
+			@media screen and (max-width:767px) {
+				text-align: left;
+				width: 100%;
+			}
+			.form-group{
+				@media screen and (max-width:767px) {
+					max-width: calc(100% - 70px);
+	    			width: 100%;
+	    		}
+			}
+			.button {
+				font-size: 16px;
+				&.buttonBorderless.button-min-165 {
+					@media screen and (max-width:767px) {
+					    min-width: 58px;
+					    max-width: 115px;
+					    width: auto;
+					    vertical-align: top;
+					}
+				}
+				span{
+					@media screen and (max-width: 767px){
+						display: none;
+					}
+				}
+				i{
+					display:none;
+					line-height: 44px;
+					@media screen and (max-width: 767px){
+						display: block;
+					}
+				}
+			}
+		}
+		.left{
+			margin-top: 0px;
+			@media screen and (max-width: 767px){
+				background-color: transparent;
+				padding: 0;
+				width:100%;
+			}
+			label{
+				display: inline-block;
+				@include text-format(17px, $blue-color);
+				@media screen and (max-width: 767px){
+					font-size: 14px;
+				}
+			}
+			.form-group{
+				width: 200px;
+				display: inline-block;
+				margin-left	: 10px;
+				@media screen and (max-width:767px) {
+					margin: 0px 0 5px 0;	
+					max-width: 100%;
+					width: 100%;
+				}				
+			}
+		}
+		}
+	}
+	.searchPage{
+		.top-row {
+			margin-bottom: 0px;
+			.left{
+				@media screen and (max-width:479px) {
+					width:100%;
+				}
+				.form-group{
+					max-width: 180px;
+					@media screen and (max-width:767px) {
+						margin-bottom: 0;
+					}
+					@media screen and (max-width:479px) {
+						max-width: 100%;
+					}
+				}				
+			}
+			.right {
+				@media screen and (max-width:479px) {
+					width:100%;
+				}
+				span {
+					margin: 25px 0;
+					display: inline-block;	
+					font-size:22px;
+					line-height: 24px;
+					@media screen and (max-width:1200px) {
+						font-size: 16px;
+					}
+				}
+				.form-group{
+					@media screen and (max-width:479px) {
+						max-width: 100%;
+						width: 100%;
+						margin-top: 5px;
+					}
+				}			
+			}
+		}  
+		.propertyOuter{
+			@include clip-path(url("#propertyBgSvg"));
+			background-color: $white;
+			padding: 3px;
+			margin-bottom: 12px;
+			.propertyinner{
+				display: flex;
+				@include clip-path(url("#propertyBgSvg"));
+				background-color: $white;
+				overflow: hidden;
+				@media screen and (max-width:992px) {
+					display: block;
+				}
+				.leftside{
+					width:306px;
+					float: left;
+					overflow: hidden;
+					@include pos(r, null);
+					@media screen and (max-width:992px) {
+						width: 100%;
+						max-height: 200px;
+					}
+					a{
+						@include height-width(100%, 100%);
+						display: inline-block;
+						img{
+							object-fit:cover;
+							min-height: 100%;
+							min-width: 100%;
+						}
+						&.button{
+							@include pos(a,-13px null null -25px);
+							@include height-width(auto, auto);
+						    padding: 12px 36px 0 41px;
+						    @include customradius(null, null, 31px, null);						    
+						}
+					}					
+				}
+				.rightside{
+					width:calc(100% - 306px);
+					padding: 20px 15px;
+					float: left;
+					@media screen and (max-width:992px) {
+						width: 100%;
+					}
+					.propertynamesize{
+						h2{
+							margin: 0 0 10px 0;
+							@include text-format-size(20px, $color-18,700);
+							@media screen and (max-width:1200px) {
+								font-size: 18px;
+							}
+							a{
+								@include text-format-size(20px, $color-18,700);
+								@media screen and (max-width:1200px) {
+									font-size: 18px;
+								}							
+							}							
+						}
+						.left{
+							h4{
+								margin: 0;
+								@include text-format-size(17px, $blue-color,700);
+								@media screen and (max-width:1200px) {
+									font-size: 14px;
+								}
+								img{
+									margin-right: 5px;
+								}
+							}
+							.propDetail{
+								margin-bottom: 20px;
+								li{
+									padding: 0 10px;
+									@include text-format-size(16px, #616161,400);
+									display: inline-block;
+									@include pos(r, null);
+									&:nth-child(2){
+										color: $orange;
+									}
+									&:first-child{
+										padding-left: 0;
+										&:before{
+											content: none;
+										}
+									}
+									&:before{
+										content: '';
+										@include pos(a, 0 null null 0);
+										height:100%;
+										width:1px;
+										background-color: $color-18;
+									}
+								}
+							}
+						}
+
+						.right{
+							text-align: right;
+							@media screen and (max-width:767px) {
+								text-align: left;
+								margin-top: 10px;
+							}
+							h2{
+								color: $blue-color;								
+							}
+							.selDetailOuter{
+								@include clip-path(url("#propertyBgSvg"));
+								background-color: $btngreen;
+								padding: 3px;
+								.sellIner{
+									@include clip-path(url("#propertyBgSvg"));
+									background-color: $white;
+									padding:5px 15px 0px 15px;
+									@media screen and (max-width:1200px) {
+										padding-bottom: 5px;
+									}								
+								}
+							}
+							.selerDetail{								
+								.profilePhoto{
+									@include height-width(55px, 55px);
+									margin: 0 15px 0 0;
+									float: left;
+									@media screen and (max-width:767px) {
+										margin: 0 10px 0 0;
+									}									
+									.imgOute{
+										padding: 3px;
+										@include clip-path(url("#circleImage"));
+										background-color: #f48e87;
+									}
+								}
+								.info{
+									width:calc(100% - 70px);
+									float: left;
+									margin-top: 7px;
+									h3{
+										@include text-format-size(15px,$color-18,400);
+										margin: 0 0 5px 0;
+										a{
+											color: $color-18;
+										}
+									}
+									span{
+										@include text-format(14px,$color-91);	
+									}
+								}
+							}							
+						}
+					}
+					.propertyDesc{
+						border-bottom:1px solid lighten($blue-color , 50%);
+						p{	
+							@include text-format-size(15px,$color-18,700);
+							line-height: 24px;
+							padding: 15px 0;
+							margin: 0;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							}
+							@media screen and (max-width:767px) {
+								font-size: 13px;
+							}
+						}
+					}
+					.propertyList{
+						margin: 20px 0;
+						li{
+							@include pos(r, null);
+							@include text-format(16px, lighten($color-18 , 20%));
+							display: inline-block;
+							padding: 0 4px 0 7px;
+							margin: 6px 0;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							}
+							@media screen and (max-width:767px) {
+								font-size: 13px;
+								margin-top: 5px;
+							}
+							@media screen and (max-width:479px) {
+								display: block;
+								padding-left: 0;
+							}
+							&:before{
+								@include pos(a, 0 auto auto 0);
+								@include height-width(100%, 1px);
+								background-color: #464646;
+								content:'';
+								@media screen and (max-width:479px) {
+									content: none;
+								}
+							}
+							&:first-child{
+								padding-left: 0;
+								&:before{
+									content:none;
+								}
+							}
+						}
+					}
+					.propertyBottom{
+						.propertIcon{
+							li{
+								margin:5px 30px 0 0;
+								@include text-format(26px, $color-18);
+								display: inline-block;
+								@media screen and (max-width:1200px) {
+									margin:5px 15px 0 0;
+									font-size: 20px;
+								}
+								@media screen and (max-width:767px) {
+									margin:5px 10px 0 0;									
+								}
+								&:last-child{
+									margin-right:0; 
+									span{
+										&.badge{
+											@include height-width(60px, 54px);
+											background-color: $orange;
+											 @include text-format(16px, $white);
+											 line-height: 50px;
+											@include clip-path(url("#circleImage"));
+											@media screen and (max-width:1200px) {
+												@include height-width(40px, 44px);
+												 line-height: 36px;
+											}
+										}
+									}
+								}
+							}
+						}
+						.propertyDate{
+							text-align: right;
+							@media screen and (max-width:767px) {
+								text-align: left;
+							}
+							h5{
+								@include text-format-size(16px,lighten($color-18 , 40%),700);						
+								@media screen and (max-width:1200px) {
+									font-size: 14px;
+								}
+								span{
+									@include text-format(15px, $color-18);
+									display: block;
+									margin-top: 5px;
+									@media screen and (max-width:1200px) {
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}	
+}

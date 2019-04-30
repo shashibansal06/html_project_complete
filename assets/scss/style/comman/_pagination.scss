@@ -1,0 +1,64 @@
+.pagination{
+	&.customPagination{
+		li{
+			display: inline-block;
+			margin: 15px 5px 0 5px;
+			@media screen and (max-width:992px) {
+				margin: 5px 2px 0 2px;
+			}
+			&.prev{
+				float: left;
+				margin: 0;
+				a{
+					@include square(auto); 
+					&:hover , &.active{
+						background-color: transparent;						
+					}
+				}
+			}
+			&.next{
+				float: right;
+				margin: 0;
+				a{
+					@include square(auto); 
+					&:hover , &.active{
+						background-color: transparent;						
+					}
+				} 
+			}
+			a{
+				padding:0;
+				@include square(30px); 
+				display: block;
+				background-color: transparent;
+				border: 0 none;
+				line-height: 32px;
+				@include text-format-size(20px,$white,400);
+				@media screen and (max-width:992px) {
+					font-size: 16px;
+					@include square(22px); 
+					line-height: 24px;
+				}
+				&:hover , &.active{
+					background-color: $lightYellow;
+					color: $purple;					
+				}
+				span{
+					&.buttonBorderless.button-large {
+						@media screen and (max-width:992px) {
+						    font-size: 12px;
+						    height: 35px;
+						    line-height: 35px;
+						    padding: 0 5px;
+						}
+					}
+				}
+				i{
+					&:before{
+						color: $purple;
+					}
+				}
+			}
+		}
+	}
+}

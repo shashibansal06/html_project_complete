@@ -1,0 +1,276 @@
+// @import url("../fonts/custom-font/style.css");
+// @import url("../fonts/stylesheet.css");
+
+html, body {
+    // height: 100%;
+    // width: 100%;
+    font-family: $font !important;
+    background-color: $color-f9;
+    font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-stroke: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+li,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $blue-color;
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+}
+
+a:focus {
+    outline: 0 none;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.padding-tb {
+    padding: 60px 0 70px;
+
+    @media screen and (max-width: 992px) {
+        padding: 40px 0;
+    }
+}
+
+p {
+    @include text-format-size(16px, $purple,400);
+    line-height: 23px;
+    @media screen and (max-width: 1400px) {
+        font-size: 14px;
+    }
+}
+
+textarea {
+    min-height: 85px;
+    resize: none;
+}
+
+.form-control:focus {
+    border-color: $blue-color !important;
+
+    @include box-shadow-none;
+}
+
+.form-group {
+    @include pos(r, null);
+    &.last {
+        margin-bottom: 0;
+    }    
+    label {
+        @include text-format-size(13px, #7f7f7f,400);
+        margin-bottom: 10px;
+    }
+    input,
+    select,
+    textarea {
+        &.form-control {
+            @include appear(none);
+            @include text-format(15px, $color-99);
+            @include radius(0);
+            @include box-shadow-none(none);
+            padding: 6px 20px;
+            background-color: $input-color;
+            @media screen and (max-width: 1200px) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .btn {
+        min-width: 180px;
+        cursor: pointer;
+        @media screen and (max-width: 1200px) {
+            min-width: 120px;
+        }
+        &.inputBtn {
+            @include pos(a, 2px 4px auto auto);
+            display: inline-block;
+            min-width: 42px;
+            width: auto;
+            line-height: 24px;
+            padding: 0;
+            height: 48px;
+            background-color: transparent;
+            &:focus {
+                outline: 0 none;
+                @include box-shadow-none();
+            }
+            i{
+                @include text-format(20px, $color-b2);
+            }
+        }
+    }
+    .select-outer {
+        @include pos(r, null);
+        &:after {
+            @include pos(a, calc(50% - 8px) 25px auto auto);
+            content: "\e908";
+            font-family: 'icomoon' !important;
+            z-index: 9;
+            font-size: 16px;
+            color: #919191;
+            @media screen and (max-width: 1200px) {
+                top: calc(50% - 6px);
+                right: 10px;
+                font-size: 10px;
+            }
+        }
+        select {
+            @include appear(none);
+            @include pos(r, null);
+            cursor: pointer;
+            background-color: transparent;
+            z-index: 9;
+        }
+    }
+}
+
+
+/* common classes css start */
+
+.link {
+    @include text-format(16px, $color-42);
+}
+.relative{
+    position: relative;
+}
+.medium {
+    font-weight: 500;
+}
+
+.globalPadding {
+    padding: 50px 0 65px;
+}
+.padding-rl-0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.margin-t-0 {
+    margin-top: 0 !important;
+}
+
+.margin-t-20 {
+    margin-top: 20px;
+}
+
+.margin-b-20 {
+    margin-bottom: 20px;
+}
+
+.orange {
+    color: $orange;
+}
+.yellow {
+    color: $lightYellow;
+}
+.block{
+    display: block;
+}
+.green {
+    color: $btngreen;
+}
+
+.red {
+    color: $red;
+}
+
+.blue {
+    color: $blue-color ;
+}
+
+.darkgrey {
+    color: $color-42;
+}
+
+.row {
+    &.row-5 {
+        margin-left: -5px;
+        margin-right: -5px;
+
+        [class*="col-"] {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    &.row-35 {
+        margin-left: -35px;
+        margin-right: -35px;
+
+        [class*="col-"] {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+
+    &.row-22 {
+        margin-left: -30px;
+        margin-right: -30px;
+
+        [class*="col-"] {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    &.row-0 {
+        margin-left: 0;
+        margin-right: 0;
+        [class*="col-"] {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+
+/* common classes css end */
+
+
+.flex {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+        display: block;
+    }
+
+    &.noflex {
+        display: flex;
+    }
+}
+
+.yellowTitle{
+    @include clip-path(url("#inputTyepTextClip"));
+    background-color: $lightYellow;
+    min-height: 55px;
+    @include text-format-size(22px, $purple,700);
+    line-height: 55px;
+    padding: 0 30px;
+    @media screen and (max-width: 1200px) {
+        padding: 0 15px;
+        font-size: 18px;
+    }
+}
+
+
+
+
+.notie-container {
+    z-index: 2000;
+    @include fontsize(16);
+}

@@ -1,0 +1,464 @@
+.main-inner {
+	.addPropertyBanner{
+		width: 100%;
+		.addBannerIn{
+			@include pos(r, null);	
+			img{
+				width:100%;
+			}
+			.container{
+				@include pos(a, 45px 0 null 0);
+				@media screen and (max-width:1200px) {
+					top:20px;
+				}
+				.rightBtn{
+					text-align: right;
+					.block{
+						margin-bottom: 12px;
+						&:last-child{
+							margin-bottom: 0;
+						}
+						@media screen and (max-width:1200px) {
+							margin-bottom: 5px;
+						}
+						a{
+							min-width: 325px;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							    height: 40px;
+							    line-height: 40px;
+							    padding: 0 10px;
+							    min-width: 250px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.addPropertyBannerOut{
+			text-align: center;
+			background-color: $white;
+			height:552px;
+			display: table;
+			width: 100%;
+			.addBannerNodata{
+				display: table-cell;
+				vertical-align: middle;		
+				.badge{
+		            @include clip-path(url("#circleImage"));
+		            @include text-format(30px, $white);
+		            text-align: center;
+		            @include pos(r, null);
+		            @include height-width(71px, 66px);
+		            line-height: 60px;
+		            background-color: $orange;
+		            font-style: normal;
+		            @media screen and (max-width: 992px) {
+		              
+		            }
+		            input{
+		            	@include pos(a,0 null null 0);
+		            	@include height-width(100%, 100%);
+		            	opacity: 0;
+		            	cursor: pointer;
+		            }
+		        }
+				h2{
+					@include text-format-size(24px, $blue-color,700);
+					margin:10px 0 20px 0;
+				}
+				h4{
+					@include text-format-size(20px, lighten($color-18 , 50%),700);				
+				}
+			}
+		}
+	}
+	.addpropertyDetailPage{
+		h3{
+			@include text-format-size(22px, $white,700);
+			padding: 25px 0 15px 0; 
+			margin: 0;
+		}
+		p{
+			line-height: 27px;
+			color: $white;
+			margin-bottom: 20px;
+		}	
+		.publishedDate{
+			h4{
+				text-align: right;
+				margin-bottom: 30px;
+				@include text-format-size(22px, $white,700);
+				@media screen and (max-width:1200px) {
+					font-size: 20px;
+				}	
+				@media screen and (max-width:767px) {
+					font-size: 16px;
+				}		
+			}
+		}	
+		.propertynamesize{
+			margin-bottom:40px;
+			h2{
+				margin: 0;
+				@include text-format-size(33px, $white,700);
+				@media screen and (max-width:1200px) {
+					font-size: 20px;
+				}				
+				span{
+					font-size:18px;
+					display: block;
+					margin-top: 8px;
+					font-weight: 400;
+					@media screen and (max-width:1200px) {
+						font-size: 16px;
+					}
+				}
+			}
+			.left{
+				
+			}
+			.right{
+				text-align: right;
+				@media screen and (max-width:767px) {
+					text-align: left;
+					margin-top: 20px;
+				}			
+			}
+		}
+		.hotelList{
+			li{
+				margin-right: 30px;
+				margin-bottom: 25px;
+				@include text-format-size(18px, $white,400);
+				@media screen and (max-width: 1200px) {
+					margin-right: 20px;
+				}
+				@media screen and (max-width: 992px) {
+					font-size: 16px;
+					margin-bottom: 15px;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 14px;
+					display: block;	
+					margin-right: 0px;			
+				}
+				span{
+					display: block;
+					font-size: 22px;
+					margin-top: 10px;
+					@media screen and (max-width: 992px) {
+						font-size: 20px;
+						margin-top: 5px;
+					}
+					@media screen and (max-width: 767px) {
+						font-size: 18px;					
+					}
+				}
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+		 .amenitiesSection{
+			ul{
+				li{
+					display:inline-block;
+					@include text-format(16px, $white);
+					@include pos(r, null);
+					padding: 0 2px 0 5px;
+					&:before{
+						@include pos(a, null -3px  0 null);
+						@include transitionLinear(0.5s);
+						content: ',';					
+					}
+					&:first-child{
+						padding-left: 0;
+						&:before{
+							content:none;
+						}
+					}
+				}
+			}
+			/*.form-group {
+				@include pos(r, null);
+				margin-bottom: 20px;
+				.optionsBox {
+					.optionsinner {
+						float       : left;
+						margin-right: 20px;
+						margin-top: 10px;
+						background  : {
+							image : url("#{$image-path}/optionBg.svg");
+							repeat: no-repeat;
+							size  : 100% auto;
+						}
+						text-align  : center;
+						line-height : 80px;
+						@include height-width(70px,69px);
+					}
+				}
+				&.radio-outer {
+                    label {
+                        &.z_checked {
+                            @include pos(r, null);
+                            @include text-format(36px, $color-66);
+                            line-height: 72px;
+                            @include height-width(100%,100%); 
+							margin: 0;
+                            @media screen and (max-width: 1200px) {
+                                font-size: 30px;
+                            }
+                            span {
+                                @include pos(r, null);
+                                cursor: pointer;
+                                display:block;
+                                &:after {
+                                	@include square(22px);
+                                    @include pos(a, -10px -10 auto auto);
+                                    content: none;
+                                    line-height: 22px;
+                                    font-family: $moonfamily;
+
+                                    @media screen and (max-width: 1200px) {
+                                        top: -6px;
+                                    }
+                                }                        
+                            }
+                        }
+                    }
+                }
+			}*/
+		} 
+		.imgVideoOuter {
+			margin-top: 25px;
+			.box {
+            	float: none;
+            	display: inline-block;
+            	width: 225px;
+            	margin: 0 10px;
+                .box-inner {
+                	@include pos(r, null);
+                	.close{
+                		@include pos(a, -10px -6px auto auto);
+					    z-index: 1;
+					    opacity: 1;
+                	}
+                   .imgStyle {
+                        @include clip-path(url("#featuredBoxClipingBg"));
+                        @include radius(10px);
+                        height: 225px;
+                        background-color: $white;
+                        overflow: hidden;
+                        img {
+                            @include clip-path(url("#featuredBoxClipingImg"));
+                            height: 100%;
+                            object-fit: cover;
+                            min-width: 100%;
+                        }
+                    }
+                }
+            }            
+        }
+        .yellowBoxSection{
+        	@include clip-path(url("#propertyBgSvg"));
+			background-color: $white;
+			padding: 3px;
+			margin-top: 50px;
+			margin-bottom: 60px;
+			@media screen and (max-width:992px) {
+				margin-bottom: 20px;
+			}
+			@media screen and (max-width:767px) {
+				margin-bottom: 0px;
+			}
+			.yellowBoxInner{
+				background-color: $lightYellow;
+				padding: 25px 15px;
+				display: flex;
+    			align-items: center;
+    			@media screen and (max-width:767px) {
+    				display: block;
+    			}
+				.left{
+					@media screen and (max-width:767px) {
+						text-align: center;
+					}
+					.profilePhoto {
+					    margin-bottom: 0;					    
+					    .imgOute{
+					      	background-color: $red;
+					        padding: 4px;
+					        @include clip-path(url("#circleImage"));					      
+					    }
+					}
+					h4{
+						@include text-format-size(24px,$purple,700);
+						margin: 15px 0 15px 0;
+						@media screen and (max-width:1200px) {
+							font-size: 20px;
+						    margin: 0px 0 10px 0;
+						}
+						a{
+							color: $purple;
+						}
+						span{
+							font-size:16px;
+							font-weight: 400;
+							display: block;
+							margin-top: 10px;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							    margin-top: 5px;
+							}
+						}
+					}
+					h5{
+						@include text-format-size(20px,$purple,400);
+						margin: 0 0 20px 0;
+						@media screen and (max-width:1200px) {
+							font-size: 16px;
+						    margin: 0px 0 10px 0;
+						}
+					}
+					
+					p{
+						@include text-format-size(18px,$purple,700);
+						margin: 0;
+						@media screen and (max-width:1200px) {
+							font-size: 14px;
+						}
+						a{
+							color: $purple;
+							text-decoration: underline;
+						}
+					}
+				}
+				.right{
+					text-align: right;
+					@media screen and (max-width:767px) {
+						text-align: center;
+						margin-top: 10px;
+					}
+					h3{
+						@include text-format(18px, $btngreen);
+						padding-top: 5px;
+					}
+					h4{
+						margin-top:18px;
+						@include text-format-size(28px, $orange,700);
+						@media screen and (max-width:1200px) {
+							font-size:22px;
+						}
+						span{
+							@include text-format-size(16px, $color-18,400);
+							margin-right: 10px;
+							@media screen and (max-width:1200px) {
+								margin-right: 5px;
+							}
+						}
+					}
+					h5{
+						@include text-format-size(22px,$purple,700);
+						margin: 0;
+						line-height: 27px;
+						@media screen and (max-width:1200px) {
+							font-size: 16px;						   
+						}
+					}
+				}
+			}
+        }
+        .submitInput {
+			margin-top: 60px;
+			margin-bottom: 0;
+			@media screen and (max-width:767px) {
+				margin-top: 20px;
+			}
+			.left{
+				h3{
+					padding-top: 15px;
+					@media screen and (max-width:767px) {
+						padding-bottom: 10px;
+					}
+				}
+				.button {
+					margin: 0 20px 0 0;	
+					@media screen and (max-width:767px) {
+						margin: 5px;
+					}
+					@media screen and (max-width:767px) {
+						margin: 5px 0;
+					}
+				}
+				.publishBottomLinks{
+					@include display(middle);
+					@media screen and (max-width:767px) {
+						display: block;
+						margin-top: 10px;
+					}
+					ul{
+						li{	
+							padding: 3px 0;
+							i{
+								font-size: 25px;
+								font-style: normal;
+								margin-right: 10px;
+								@media screen and (max-width:1200px) {
+									font-size:20px; 
+								}								
+								&:before{
+									color: $white;
+								}
+							}
+							a{
+								text-decoration: underline;
+								@include text-format-size(22px, $white,700);
+								@media screen and (max-width:1200px) {
+									font-size:14px; 
+								}
+								&.yellow{
+									color: $lightYellow;	
+								}
+							}
+						}
+					}
+				}
+			}
+			.right{
+				text-align: right;
+				@media screen and (max-width:767px) {
+					text-align: left;
+				}
+				a{
+					&.white-link{
+						@include text-format-size(18px, $white,400);
+						text-decoration: underline;
+						margin-top: 15px;
+						display: inline-block;
+						@media screen and (max-width:1200px) {
+							font-size: 14px;							
+						}
+						@media screen and (max-width:767px) {
+							font-size: 12px;
+							margin-top: 10px;							
+						}
+					}
+				}
+				.payLinks{
+					margin-top: 20px;
+					@media screen and (max-width:767px) {
+						margin-top: 15px;
+					}
+					a{
+						@include text-format-size(16px, $white,700);
+						text-decoration: underline;
+						@media screen and (max-width:767px) {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

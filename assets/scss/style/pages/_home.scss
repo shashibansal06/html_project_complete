@@ -1,0 +1,415 @@
+.main-inner {
+    margin-top: 94px;
+    @media screen and (max-width: 1200px) {
+        margin-top: 76px;
+    }
+    @media screen and (max-width: 992px) {
+        margin-top: 65px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-top: 0;
+    }
+
+    .blueBackground {
+        padding: 85px 0 85px;
+        min-height: calc(100vh - 188px);
+        background: {
+            color: $blueBG;
+            image: url("#{$image-path}/loginPageBG.png");
+            position: bottom center;
+            repeat: no-repeat;
+            size: 100% auto;
+        };
+        @media screen and (max-width: 1200px) {
+            padding: 85px 0;
+            min-height: calc(100vh - 176px);
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 30px 0 40px;
+        }
+        &.topSpacing{
+            padding-top: 35px;
+        }
+    }
+
+    .homepage {
+        h3 {
+            @include text-format-size(36px, $purple,700);
+            margin: 0 0 20px;
+            padding: 0;
+            @media screen and (max-width: 1200px) {
+                font-size: 25px;
+            }
+        }
+
+        .aboutUs {
+            background: {
+                color: $green;
+                image: url("#{$image-path}/aboutBG.png");
+                position: left bottom;
+                repeat: repeat-x;
+                size: auto;
+            };
+
+            &.padding-tb {
+                padding: 90px 0 150px;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 50px 0 100px;
+                }
+            }
+
+            .aboutright {
+                @media screen and (max-width: 767px) {
+                    margin-top: 30px;
+                }
+
+                h3 {
+                    color: $white;
+                }
+
+                p {
+                    color: $white;
+                    margin-bottom: 30px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        .benefitsection {
+            background-color: $lightYellow;
+
+            @include pos(r, null);
+
+            &.padding-tb {
+                padding: 45px 0;
+
+                h3 {
+                    color: $red;
+                }
+
+                .box {
+                    padding-right: 100px;
+                    background: {
+                        image: url("#{$image-path}/lineImg.png");
+                        repeat: no-repeat;
+                        position: right center;
+                    };
+
+                    @media screen and (max-width: 1200px) {
+                        padding-right: 40px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        padding-right: 15px;
+                        background-image: none;
+                    }
+                }
+
+                .box1 {
+                    padding-left: 100px;
+
+                    @media screen and (max-width: 1200px) {
+                        padding-left: 40px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        padding-left: 15px;
+                        margin-top: 40px;
+                    }
+                }
+
+                ul {
+                    li {
+                        @include text-format(16px, $black);
+
+                        margin-bottom: 20px;
+                        padding-left: 25px;
+
+                        @include pos(r, null);
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 14px;
+                            margin-bottom: 10px;
+                        }
+
+                        &:after {
+                            @include pos(a, 1px auto auto 0);
+
+                            content: '\e904';
+                            font-family: $moonfamily;
+                        }
+                    }
+                }
+
+                .bottom-btn {
+                    @include pos(a, 100% null null null);
+
+                    width: 100%;
+                    margin-top: 15px;
+
+                    .button {
+                        @include text-format-size(21px, $white,700);
+                        height: 60px;
+                        line-height: 60px;
+                        max-width: 220px;
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .howItWork {
+            background-color: $white;
+
+            h3 {
+                padding-top: 30px;
+            }
+
+            .howBox {
+                display: flex;
+                margin-top: 45px;
+
+                @media screen and (max-width: 992px) {
+                    display: block;
+                }
+
+                @media screen and (max-width: 767px) {
+                    margin-top: 15px;
+                }
+
+                .box {
+                    text-align: center;
+
+                    @include pos(r, null);
+
+                    @media screen and (max-width: 992px) {
+                        min-height: 200px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        min-height: 20px;
+                        margin-bottom: 40px;
+                    }
+
+                    &:after {
+                        @include pos(a, 15px -15px auto auto);
+
+                        content: '\e900';
+                        font-family: $moonfamily;
+                        font-size: 20px;
+
+                        @media screen and (max-width: 992px) {
+                            content: none;
+                        }
+                    }
+
+                    &:last-child {
+                        &:after {
+                            content: none;
+                        }
+                    }
+
+                    .box-inner {
+                        height: 100%;
+
+                        .iconHow {
+                            margin-bottom: 40px;
+
+                            @media screen and (max-width: 1200px) {
+                                margin-bottom: 20px;
+                            }
+
+                            @media screen and (max-width: 767px) {
+                                margin-bottom: 10px;
+                            }
+
+                            span {
+                                display: inline-block;
+                                position: relative;
+
+                                i {
+                                    font-size: 50px;
+
+                                    @media screen and (max-width: 1200px) {
+                                        font-size: 30px;
+                                    }
+                                }
+                            }
+                        }
+
+                        h2 {
+                            @include text-format-size(20px, $purple,700);
+                            padding: 0 0 20px;
+                            margin: 0;
+                            @media screen and (max-width: 1200px) {
+                                font-size: 16px;
+                            }
+
+                            @media screen and (max-width: 767px) {
+                                padding: 0 0 10px;
+                            }
+                        }
+
+                        p {
+                            @include text-format(14px, $purple);
+                        }
+                    }
+                }
+            }
+        }
+
+        .featuredSection {
+            background-color: $orange;
+
+            h3 {
+                color: $white;
+
+                @media screen and (max-width: 767px) {
+                    text-align: center;
+                }
+            }
+
+            p {
+                color: $white;
+            }
+
+            .featureBox {
+                text-align: center;
+
+                @media screen and (max-width: 767px) {}
+
+                .box {
+                    .box-inner {
+                        margin: 15px 0;
+
+                        .imgfeature {
+                            @include clip-path(url("#featuredBoxClipingBg")); 
+
+                            @include radius(10px);
+
+                            max-width: 230px;
+                            height: 270px;
+                            margin: 0 auto 25px;
+                            background-color: $white;
+                            overflow: hidden;
+
+                            img {
+                                @include clip-path(url("#featuredBoxClipingImg"));
+
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        h2 {
+                            @include text-format-size(22px, $white,700);
+                            margin-bottom: 10px;                            
+                        }
+
+                        h4 {
+                            @include text-format-size(16px, $white,700);
+                            margin: 10px 0 0;
+                        }
+
+                        p {
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .buttonClipMask {
+                    margin-top: 50px;
+                    @media screen and (max-width: 767px) {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        .blogSection {
+            background-color: $blueBG;
+
+            h3 {
+                color: $white;
+            }
+
+            p {
+                color: $white;
+            }
+
+            .blogBox {
+                @media screen and (max-width: 767px) {
+                    display: block;
+                    text-align: center;
+                }
+
+                .box {
+                    @media screen and (max-width: 767px) {
+                        margin-bottom: 25px;
+                    }
+
+                    &:last-child {
+                        @media screen and (max-width: 767px) {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .box-inner {
+                        height: 100%;
+                        margin: 15px 0;
+
+                        .imgBlog {
+                            @include clip-path(url("#featuredBoxClipingBg"));
+
+                            @include radius(10px);
+
+                            height: 240px;
+                            margin: 0 auto 25px;
+                            background-color: #ffffff;
+                            overflow: hidden;
+                            margin-bottom: 25px;
+                            max-width: 330px;
+                            @media screen and (max-width: 992px) {
+                                margin-bottom: 15px;
+                            }
+
+                            img {
+                                @include clip-path(url("#featuredBoxClipingImg"));
+
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        h2 {
+                            @include text-format-size(20px, $white,700);
+                            padding: 0 0 10px;
+                            margin: 0;
+                            @media screen and (max-width: 992px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        h4 {
+                            @include text-format-size(14px, $white,400);
+                            padding: 0 0 10px;
+                            margin: 0;
+                            @media screen and (max-width: 992px) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .buttonClipMask {
+                    margin-top: 25px;
+                    @media screen and (max-width: 767px) {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

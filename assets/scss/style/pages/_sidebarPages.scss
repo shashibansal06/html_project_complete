@@ -1,0 +1,423 @@
+.main-inner {
+	.sidebarPage{
+		.top-row{ 
+			margin-bottom:20px;
+			@media screen and (max-width:767px) {
+			 	margin-bottom: 10px;
+			}
+		    .right {
+		    	  	@media screen and (max-width:767px) {
+		    	  		margin-top: 5px;
+		    	  	}
+		        span {
+		            font-size:22px;
+		            @media screen and (max-width:1200px) {
+		                font-size: 16px;
+		            }
+		        }		       
+		    }
+		}
+		.sidebar{
+			padding-right: 45px;
+			@media screen and (max-width:1200px) {
+				padding-right: 25px;
+			}
+			@media screen and (max-width:767px) {
+				padding-right: 15px;
+			}
+			ul{
+				@media screen and (max-width:992px) {
+					display: table;
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				li{
+					@include clip-path(url("#sidebarSvg"));
+					background-color: $white;
+					margin-bottom: 10px;
+					padding: 4px;
+					display: block;
+					@media screen and (max-width:992px) {
+						display: table-cell;
+						padding: 2px;						
+					}
+					a{
+						@include clip-path(url("#sidebarSvg"));
+						background-color: $blueBG;
+						text-align: center;
+						display: block;
+						padding: 15px 5px;
+						span{
+							@include text-format-size(16px,$white,400);
+							display: block;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							}
+							@media screen and (max-width:767px) {
+								display: none;
+							}
+						}
+						i{
+							@include text-format(38px,$white);
+							display: block;
+							margin-top: 15px;
+							@media screen and (max-width:767px) {
+								font-size: 20px;
+								margin: 0;
+							}
+							&:before{
+								color: $white;
+							}
+						}
+					}
+					&:hover, &.active{
+						background-color: $lightYellow;
+						a{
+							background-color: $lightYellow;
+							span{
+								color: $red;
+							}
+						}
+						i{
+							&:before{
+								color: $red;
+							}
+						}
+					}
+				}
+			}
+		}
+		.connectRightPage{		
+			.nodata{
+				i{
+					@include text-format-size(85px,$white,400);
+					margin: 60px 0;
+					display: block;
+					@media screen and (max-width:767px) {
+						margin: 40px 0;
+						font-size: 55px;
+					}
+				}
+				h5{
+					@include text-format-size(28px,$white,700);
+					@media screen and (max-width:767px) {
+						font-size: 24px;
+					}
+				}
+			}
+			.boxSection{
+	        	@include clip-path(url("#propertyBgSvg"));
+				background-color: $white;
+				margin-bottom: 15px;
+				padding-top: 25px;
+				@media screen and (max-width:992px) {
+					padding-top: 15px;					
+				}
+				@media screen and (max-width:767px) {
+					margin-bottom: 10px;
+				}
+				.leftSection{
+					@media screen and (max-width:767px) {
+						text-align: center;
+						padding: 0;
+					}
+					.profilePhoto {
+					    margin-bottom: 0;
+					    @include height-width(132px, 114px);	
+					    .imgOute{
+					      	background-color: $btngreen;
+					        padding: 4px;
+					        @include clip-path(url("#circleImage"));					      
+					    }
+					}
+				}
+				.rightContent{
+					@media screen and (max-width:767px) {
+						padding: 0;
+					}
+					p{
+						@include text-format-size(15px,$color-18,700);
+						margin-bottom: 20px;
+						@media screen and (max-width:1200px) {
+							font-size: 14px;
+						}
+					}
+					h3{
+						@include text-format-size(18px,$color-18,700);
+						margin:0 0 15px 0;
+						@media screen and (max-width:1200px) {
+							font-size: 16px;
+							margin:20px 0 10px 0;
+						}
+						@media screen and (max-width:767px) {
+							margin:0px 0 10px 0;
+						}
+						a{
+							color: $color-18;
+						}
+					}
+					h4{
+						@include text-format-size(16px,$color-18,400);
+						margin:0 0 30px 0;
+						@media screen and (max-width:1200px) {
+							font-size: 14px;
+							margin:0 0 15px 0;
+						}
+					}
+					.bottomRow{
+						padding:25px 0;
+						border-top:1px solid rgba(17,126,194,0.2);
+						@media screen and (max-width:1200px) {
+							padding:15px 0;
+						}
+						h2{
+							@include text-format-size(18px,$color-18,700);
+							margin: 0;
+							@media screen and (max-width:1200px) {
+								font-size: 16px;
+							}
+						} 
+						h5{
+							@include text-format-size(16px,$color-18,400);
+							margin: 0;
+							@media screen and (max-width:1200px) {
+								font-size: 14px;
+							}
+						}
+						.left{
+							padding: 0;
+						}
+						.right{
+							padding: 0;
+							text-align: right;
+							@media screen and (max-width:767px) {
+								text-align: left;
+								margin-top: 10px;
+							}
+						}
+					}
+				}								
+	        }
+	        .propertyOuter{
+				@include clip-path(url("#propertyBgSvg"));
+				background-color: $white;
+				padding: 3px;
+				margin-bottom: 12px;
+				.propertyinner{
+					display: flex;
+					@include clip-path(url("#propertyBgSvg"));
+					background-color: $white;
+					overflow: hidden;
+					@media screen and (max-width:992px) {
+						display: block;
+					}
+					.leftside{
+						width:260px;
+						float: left;
+						overflow: hidden;
+						@include pos(r, null);
+						@media screen and (max-width:992px) {
+							width: 100%;
+							max-height: 200px;
+						}
+						a{
+							@include height-width(100%, 100%);
+							display: inline-block;
+							img{
+								object-fit:cover;
+								min-height: 100%;
+								min-width: 100%;
+							}							
+						}					
+					}
+					.rightside{
+						width:calc(100% - 260px);
+						padding: 20px 25px;
+						float: left;
+						@media screen and (max-width:992px) {
+							width: 100%;
+						}
+						.propertynamesize{
+							margin-bottom:15px;
+							h2{
+								margin: 0;
+								@include text-format-size(18px, $color-18,700);
+								@media screen and (max-width:1200px) {
+									font-size: 16px;
+								}
+								span{
+									@include text-format(16px, lighten($color-18 , 20%));
+									display: block;
+									margin-top: 6px;
+									@media screen and (max-width:1200px) {
+										font-size: 14px;
+									}
+								}
+								a{
+									@include text-format-size(18px, $color-18,700);
+									@media screen and (max-width:1200px) {
+										font-size: 18px;
+									}
+									span{
+										@include text-format(16px, lighten($color-18 , 20%));
+										display: block;
+										margin-top: 6px;
+										@media screen and (max-width:1200px) {
+											font-size: 14px;
+										}
+									}
+								}							
+							}
+							.right{
+								text-align: right;
+								@media screen and (max-width:767px) {
+									text-align: left;
+									margin-top: 10px;
+								}
+								h2{
+									color: $blue-color;
+									span{
+										color: $orange;
+									}
+								}
+							}
+						}
+						.propertLoc{
+							margin-bottom: 10px;
+							.left{
+								h4{
+									margin: 0 0 20px 0;
+									line-height: 24px;
+									@include text-format-size(15px, $blue-color,400);
+									@media screen and (max-width:1200px) {
+										font-size: 14px;
+										margin-bottom: 10px;
+									}
+									img{
+										margin-right: 5px;
+									}
+								}
+							}
+							.right{
+								text-align: right;
+								@media screen and (max-width:767px) {
+									text-align: left;
+								}
+								&.propertyDate{
+									h5{
+										margin: 0;
+										@include text-format-size(12px, $color-91,400);
+										span{
+											margin-left: 5px;
+											@include text-format(15px, $color-18);
+											@media screen and (max-width:1200px) {
+												margin-left: 0;
+												display: block;
+												margin-top: 5px;
+											}
+										}
+									}
+								}
+							}							
+						}
+					
+						.propertyBottom{
+							display: 	flex;
+							align-items: center;
+							padding: 15px 0 0 0;
+							border-top:1px solid rgba(17,126,194,0.2);
+							margin: 0;
+							@media screen and (max-width:767px) {
+								display: block;							
+							}							
+							.left{
+								padding: 0;
+								&.propertIcon{									
+									li{
+										margin:0px 30px 0 0;
+										@include text-format(24px, $color-18);
+										display: inline-block;
+										@media screen and (max-width:1200px) {
+											margin:15px 15px 0 0;
+											font-size: 20px;
+										}
+									}
+								}
+								&.selerDetail{
+									.profilePhoto{
+										@include height-width(55px, 55px);
+										margin: 0 15px 0 0;
+										float: left;
+										@media screen and (max-width:767px) {
+											margin: 0 10px 0 0;
+										}									
+										.imgOute{
+											padding: 3px;
+											@include clip-path(url("#circleImage"));
+											background-color: #f48e87;
+										}
+									}
+									.info{
+										width:calc(100% - 70px);
+										float: left;
+										h3{
+											@include text-format-size(15px,$color-18,400);
+											margin: 0 0 8px 0;
+										}
+										span{
+											@include text-format(14px,$color-91);	
+										}
+									}
+								}
+							}							
+							.right{
+								&.statusProperty{
+									text-align: right;
+									padding-right: 0;
+									@media screen and (max-width:767px) {
+										text-align: left;
+										margin-top: 10px;
+										padding: 0;
+									}
+									h5{
+										margin: 0;
+										@include text-format-size(14px,$color-91,400);						
+										span{
+											font-weight: 700;
+											font-size: 15px;
+											display: block;
+											margin-top: 5px;
+											@media screen and (max-width:1200px) {
+												font-size: 14px;
+											}
+										}										
+									}
+
+								}
+								&.recommendNo{
+									h5{
+										margin: 0;
+										a{
+											@include text-format-size(20px,$orange,700);						
+											@media screen and (max-width:1200px) {
+												font-size: 14px;
+											}
+											span{
+												@include text-format-size(15px,lighten($color-18 , 40%),400);
+												display: block;
+												margin-top: 5px;
+												@media screen and (max-width:1200px) {
+													font-size: 14px;
+												}
+											}
+										}
+									}
+								}
+							}							
+						}
+					}
+				}
+			}
+		}
+	}
+}

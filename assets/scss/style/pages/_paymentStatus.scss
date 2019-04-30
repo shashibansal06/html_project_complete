@@ -1,0 +1,76 @@
+.main-inner {
+	.backright{
+			a {
+				@include text-format-size(20px,$white,700);	
+				line-height: 24px;
+				margin-bottom: 20px;
+				display: inline-block;
+				@media screen and (max-width:1200px) {
+					font-size: 16px;
+				}
+				i{
+					margin-right: 3px;
+				}
+			}
+		}
+	.paymentStatus{
+		.icon{
+			margin-bottom: 40px;
+			@media screen and (max-width:992px) {
+				margin-bottom: 30px;
+			}
+			img{
+				@media screen and (max-width:992px) {
+					width:50px;
+				}
+			}
+			i{
+				@include text-format(50px, $white);
+				@media screen and (max-width:992px) {
+					font-size:40px;
+				}
+			}
+		}
+		h1{
+			@include text-format-size(28px, $white,700);
+			margin: 0 0 30px 0;
+			@media screen and (max-width:992px) {
+			    font-size: 22px;
+			    margin: 0 0 20px 0;
+			}
+		}
+		h2{
+			@include text-format-size(24px, $white,700); 
+			line-height: 40px;	
+			margin: 0;
+			@media screen and (max-width:992px) {
+				font-size: 18px;
+    			line-height: 34px;
+			}
+			@media screen and (max-width:767px) {
+				font-size: 16px;
+    			line-height: 24px;
+			}
+		}
+		.tranctionInfo{
+			margin-top: 75px;
+			@media screen and (max-width:992px) {
+				margin-top: 45px;
+			}
+			p{
+				@include text-format(22px, $white);
+				margin-bottom: 25px;
+				@media screen and (max-width:992px) {
+					font-size: 16px;	
+					margin-bottom: 15px;    			
+				}
+				span{
+					@media screen and (max-width:479px) {
+						display: block;
+						font-size:14px;
+					}
+				}
+			}
+		}
+	}
+}

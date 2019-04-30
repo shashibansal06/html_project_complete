@@ -1,0 +1,436 @@
+header {
+    @include pos(f, 0 auto auto 0);
+    @include box-shadow-n(0px, 8px, 27px, rgba(0, 0, 0, 0.3));
+    width: 100%;
+    z-index: 991;
+    background-color: $white-color;
+    padding: 20px 0;
+    @media screen and (max-width: 1200px) {
+        padding: 10px 0;
+    }
+    @media screen and (max-width: 767px) {
+        position: relative;
+    }
+    .logo {
+        float: left;
+        @media screen and (max-width: 1200px) {
+            margin-top: 8px;
+            width: 150px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-top: 0;
+        }
+    }
+
+    .navbar-toggle {
+        padding: 5px 0 0 0;
+        margin-right:0; 
+        @media screen and (max-width: 992px) {
+            display: block;
+            z-index: 11;
+            cursor: pointer;
+        }
+        .icon-bar {
+            background-color: $blue-color;
+        }
+    }
+
+    nav {
+        float: right;
+        @media screen and (max-width: 479px) {
+            width:100%;
+        }
+        .custom-nav {
+            float: left;
+            @media screen and (max-width: 992px) {
+                width: 270px;
+                z-index: 9;
+                background-color: $white;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                padding:40px 0 20px;
+                @include translateX(100%);
+                @include transitionLinear(0.5s);
+                overflow-y:auto; 
+            }
+            ul {
+                &.list-inline {
+                    margin:16px 0 0;
+                    @media screen and (max-width: 1200px) {
+                        margin: 20px 0 0;
+                    }
+                    li {
+                        padding: 0 0 0 30px;
+                        vertical-align: top;
+                        margin: 0;
+                        @media screen and (max-width: 1200px) {
+                            padding-left: 20px;
+                        }
+                        @media screen and (max-width: 992px) {
+                            padding:0;
+                            width: 100%;
+                            display: inline-block;
+                            margin: 0px;
+                        }    
+                        a {
+                            @include text-format-size(15px, $textColor,700);
+                            @include display(middle);
+                            @media screen and (max-width: 1200px) {
+                                font-size: 14px;
+                            }
+                            @media screen and (max-width: 992px) {
+                                font-size: 16px;
+                                padding: 10px 15px;
+                                display: block;
+                            }
+                            &.active,
+                            &:focus,
+                            &:hover {
+                                color: $blue-color;
+                                 @media screen and (max-width: 992px) {
+                                   background-color:$blue-color;
+                                   color: $white; 
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                }
+            }
+        }
+
+        .header-right {
+            float: right;
+            margin-left: 15px;
+            margin-top: 5px;
+            @media screen and (max-width: 992px) {
+                margin:0 15px 0 0; 
+            }
+            @media screen and (max-width:479px) {             
+                margin: 12px 0px 0 0;
+                width: 100%;
+                border-top: 1px solid rgba(52,148,250,0.3);
+                padding-top: 9px;
+            }             
+            ._buttonsGroup {
+                li {
+                    @include clip-path(url("#headerButtonTypeBg"));
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    background-color: $yellow;
+                    padding: 3px 4px;
+                    @media screen and (max-width:479px) {  
+                        margin-left: 0;
+                        width:50%;
+                        float: left;
+                    }
+                    &:hover {
+                        a {
+                            background-color: $yellow;
+                            color: #fff;
+                        }
+                    }
+
+                    a {
+                        @include clip-path(url("#headerButtonTypeBg"));
+                        @include text-format-size(15px, $textColor,700);
+                        text-align: center;
+                        display: block;
+                        width: 80px;
+                        line-height: 40px;
+                        background-color: #fff;
+                        @media screen and (max-width: 767px) {
+                            font-size: 13px;
+                            line-height: 32px;
+                            width:75px;
+                        }
+                        @media screen and (max-width: 479px) {
+                            width:100%;
+                        }
+                    }
+
+                    &.signupBtn {
+                        background-color: $green;
+                        &:hover {
+                            a {
+                                background-color: $green;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .notification{
+                @include display(middle);
+                margin-left: 25px;
+                @media screen and (max-width: 1200px) {
+                    margin-top: 5px;
+                }
+                @media screen and (max-width: 767px) {
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+                @media screen and (max-width: 479px) {
+                    margin-top: 8px;
+                }
+
+                .dropdown-toggle {
+                    @include text-format-size(15px, $textColor,700);
+                    @include display(middle);
+                    @media screen and (max-width: 1200px) {
+                        font-size: 14px;
+                    }
+                    @media screen and (max-width: 992px) {
+                        font-size: 16px;
+                    }
+                    &.active {
+                        font-weight: 700;
+                    }
+                    &.active,
+                    &:focus,
+                    &:hover {
+                        color: $blue-color;
+                    }
+                }
+                i{
+                    font-size: 26px;
+                }
+                .badge{
+                    @include pos(a, -25px auto auto 50%);
+                    @include clip-path(url("#circleImage"));
+                    @include text-format-size(12px, $white,400);
+                    text-align: center;
+                    width:26px;
+                    line-height: 22px;
+                    background-color: $orange;
+                    font-style: normal;
+                    @media screen and (max-width: 992px) {
+                        top:-10px;
+                        left:auto;
+                        right:-10px;
+                    }
+                } 
+                .dropdown{    
+                    .dropdown-menu{  
+                        display: none; 
+                        left:calc(50% - 190px);                               
+                        width: 380px;
+                        background-color: transparent;
+                        @media screen and (max-width:767px) {
+                            left:auto;
+                            right:-10px;  
+                            width:300px;                                                                 
+                        }
+                         @media screen and (max-width:479px) {
+                            width: 270px;
+                            right:-90px;
+                            top:50px;
+                        }
+                        &:before {                                    
+                            @media screen and (max-width:767px){
+                                right:10px;
+                                left:auto;
+                            } 
+                            @media screen and (max-width:479px){
+                                content:none;
+                            } 
+                        }
+                        ul{ 
+                            padding: 15px 0 0 0; 
+                            li{
+                                padding:15px 0px;
+                                border-bottom: 1px solid #ececec;
+                                width:calc(100% - 44px);
+                                margin-left: 22px;
+                                @media screen and (max-width:992px){
+                                    padding:10px 0px;
+                                    width:calc(100% - 20px);
+                                    margin-left: 10px;
+                                }
+                                a{
+                                    color:#117ec2;
+                                    padding: 0;
+                                    font-weight: 700;
+                                    &:hover{
+                                        background-color: transparent;
+                                    }
+                                }
+                                h3{
+                                    @include text-format(12px, $grey-color);
+                                    padding: 10px 0 0 0;
+                                    margin: 0;
+                                    line-height: 20px;
+                                }
+                                h4{
+                                    @include text-format(12px, $color-91);
+                                    margin-bottom: 0;
+                                }
+                                &.viewall{
+                                    background-color: $purple;
+                                    text-align: center;
+                                    margin: 0;
+                                    border: 0 none;
+                                    width: 100%;
+                                    a{
+                                        @include text-format(16px, $white);
+                                    }
+                                }                                  
+                            }
+                        }
+                    }
+                }
+            }
+            .userProf{
+                margin-left: 40px;
+                @include display(middle);   
+                @media screen and (max-width:767px) {
+                    margin-left: 0;
+                }
+                @media screen and (max-width: 479px) {
+                    float: right;
+                }
+                &.dropdown{    
+                    .dropdown-menu{  
+                        display: none; 
+                        left:auto;
+                        right:0;                       
+                        width: 320px;
+                        @include radius(20px);
+                        background-color: $white;
+                        @media screen and (max-width:767px) {
+                        
+                            width:270px;
+                        }
+                        &:before {                            
+                            @media screen and (max-width:767px){
+                                right:auto;
+                                left:80px;
+                            }   
+                        }                
+                        ul{                            
+                            padding: 15px 0;                            
+                            li{
+                                width:100%;  
+                                @include text-format(16px,$color-18); 
+                                padding: 15px 25px;
+                                border-bottom: 1px solid #ececec;   
+                                @media screen and (max-width: 992px) {
+                                    font-size:14px;
+                                    padding: 10px 20px;
+                                }                                 
+                                a{
+                                    color:$color-18;
+                                    &:hover{
+                                        background-color: transparent;
+                                    }
+                                } 
+                                &:last-child{                                           
+                                    border: 0 none;                                         
+                                }
+                                .radio-toggle{
+                                    float: right;
+                                }                                 
+                            }
+                        }
+                    }
+                }
+                .userImg{
+                    @include height-width(48px, 45px);
+                    @include clip-path(url("#circleImage"));
+                    @include display(middle);
+                    @media screen and (max-width: 767px) {
+                        @include height-width(40px, 37px);
+                    }
+                    img{
+                        min-height: 44px;
+                        @media screen and (max-width: 767px) {
+                            min-height: 40px;
+                        }
+                    }
+                }
+                .username{
+                    @include text-format(15px,$color-18);
+                    @include display(middle);
+                    margin: 0 8px;
+                    @media screen and (max-width: 992px) {
+                        font-size:14px;
+                    }
+                    .name{
+                        @media screen and (max-width: 767px) {
+                            display: none;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+.dropdown{    
+    .dropdown-menu{  
+        @include box-shadow-none(); 
+        border:0 none;
+        padding: 0;
+        top: 85px;
+        @media screen and (max-width:992px) {
+            top:75px;
+        }
+        &:before {
+            @include pos(a, -15px calc(50% - 15px) auto auto);
+            display: inline-block;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid #ccc;
+            border-left: 20px solid transparent;
+            border-bottom-color: $white;
+            content: '';
+            @media screen and (max-width:767px){
+                right:auto;
+                left:80px;
+            }   
+        } 
+        .effect{
+            position: relative;
+             padding: 0;
+            border: 0 none;                           
+            width: 100%;                            
+            position:  relative;
+            &:before{
+                @include pos(a, -3px auto auto 2px);         
+                content: '';
+                z-index: -1;
+                background:$white;
+                @include height-width(40px, 82px);
+                border-top-left-radius: 31px;
+                border-top-right-radius: 22px;
+                @include rotate(4deg); 
+            }
+        }
+        ul{
+            background-color: $white;
+            overflow: hidden;
+            @include radius(20px);
+            display: block;
+        }
+    }
+}
+
+.body{
+    &.active{
+        overflow: hidden;
+        @include height-width(100%, 100%);       
+        header {
+            nav {
+                .custom-nav {                              
+                    @media screen and (max-width: 992px) {
+                        @include translateX(0);
+                        @include transitionLinear(0.5s);
+                    }
+                }
+            }
+        }
+    }
+}

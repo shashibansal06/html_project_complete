@@ -1,0 +1,116 @@
+.main-inner {
+	.pageheaderTop{
+		&.connectionHeader{
+			.right{
+				.form-group{
+					@media screen and (max-width:767px) {
+						max-width: 100%;
+		    			width: 100%;
+		    		}
+				}	
+			}
+		}
+	}
+	.connectionPage{
+		.top-row{
+			margin-bottom:20px;
+			@media screen and (max-width:767px) {
+			 	margin-bottom: 10px;
+			}
+		    .right {
+		        span {
+		            font-size:22px;
+		            @media screen and (max-width:1200px) {
+		                font-size: 16px;
+		            }
+		        }		       
+		    }
+		}
+		.boxSection{
+        	@include clip-path(url("#propertyBgSvg"));
+			background-color: $white;
+			margin-bottom: 15px;
+			padding-top: 25px;
+			padding-bottom: 10px;
+			@media screen and (max-width:992px) {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+			@media screen and (max-width:767px) {
+				margin-bottom: 10px;
+			}
+			.left{
+				@media screen and (max-width:767px) {
+					text-align: center;
+				}
+				.profilePhoto {
+				    margin-bottom: 0;	
+				    .imgOute{
+				      	background-color: $btngreen;
+				        padding: 4px;
+				        @include clip-path(url("#circleImage"));					      
+				    }
+				}
+				h2{
+					@include text-format-size(22px,$color-18,700);
+					margin: 15px 0 15px 0;
+					@media screen and (max-width:1200px) {
+						font-size: 20px;
+					}
+					@media screen and (max-width:992px) {
+						margin:0 0 10px 0;
+					}
+					a{
+						color: $color-18;
+					}						
+				}
+				h4{
+					@include text-format-size(16px,$blue-color,400);
+					margin: 0 0 10px 0;
+					@media screen and (max-width:1200px) {
+						font-size: 14px;
+					    margin: 0px 0 10px 0;
+					}
+					img{
+						margin-right: 5px;
+					    vertical-align: text-bottom;
+					    width: 15px;					
+					}
+				}
+				
+				p{
+					@include text-format-size(15px,$color-18,400);
+					margin:10px 0 0 0;
+					@media screen and (max-width:1200px) {
+						font-size: 14px;
+					}	
+					a{
+						text-decoration: underline;
+						color: $blue-color;
+					}							
+				}
+			}
+			.right{
+				text-align: right;
+				@media screen and (max-width:767px) {
+					text-align: center;
+					margin-top: 10px;
+				}
+				.button{
+					margin-top: 10px;
+				}
+				p{
+					@include text-format-size(15px,$blue-color,400);
+					margin:25px 0 0 0;
+					@media screen and (max-width:1200px) {
+						font-size: 14px;
+					}	
+					a{
+						text-decoration: underline;
+						color: $blue-color;
+					}					
+				}					
+			}
+        }
+	}
+}

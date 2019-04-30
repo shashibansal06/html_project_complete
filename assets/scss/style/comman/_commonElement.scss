@@ -1,0 +1,525 @@
+.radio-outer{
+    label{
+        &.z_radio{
+            @include pos(r, null);
+            @include margin-right(70);
+            cursor: pointer; 
+            span{ 
+                @include padding-left(40);
+                @include pos(r, null);
+                &:after {
+                @include pos(a, 4px auto auto 8px);
+                  @include circle;
+                  content:none;
+                  @include square(10px);
+                  background-color: $btngreen;                               
+                }
+                &:before {
+                  @include pos(a, -3px auto auto 0px );
+                  background-color: $white; 
+                  content: "";      
+                  @include height-width(29px, 27px);
+                  @include clip-path(url("#circleImage"));
+                }  
+            }
+            input[type="radio"]{
+                @include pos(a, 0px auto auto 0px );
+                visibility: hidden;
+                &:checked{
+                    &+ span{
+                        &:after{
+                            content:'';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.top-row {
+    margin-bottom: 35px;
+    @include pos(r, null);
+    h1 {
+        @include text-format-size(28px,$white,700);
+        line-height   : 24px;
+        text-transform: capitalize;
+        padding       : 0;
+        margin        : 0;
+        @media screen and (max-width:1200px) {
+            font-size: 20px;
+        }
+    }
+    p {
+        @include text-format(18px,$white);
+        line-height   : 27px;
+        margin-top: 15px;
+        @media screen and (max-width:1200px) {
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 20px;
+        }
+    }
+    .right {
+        text-align: right;
+        @media screen and (max-width: 767px) {
+            margin-bottom: 10px;
+        } 
+        .absolute , &.absolute{
+            @include pos(a, 0 15px null null);
+            z-index: 1;
+            @media screen and (max-width: 767px) {
+                position: static;
+            }
+        }
+        span {
+            @include text-format-size(18px,$white,700);
+            line-height: 24px;
+            @media screen and (max-width:1200px) {
+                font-size: 16px;
+            }
+        }
+        a{
+            &.pevPage{
+                text-decoration: underline;
+                @include text-format-size(16px,$white,400);
+                @media screen and (max-width:1200px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    } 
+}
+
+/* upload file box start */
+.leftUplodImg{
+    @media screen and (max-width: 767px) {
+        text-align:center;
+    }
+    .uploadPhoto {
+        margin-bottom: 30px;
+        @include height-width(172px, 169px);
+        @include clip-path(url("#featuredBoxClipingBg"));
+        background-color: $white;
+        display: inline-block;
+        .uploadImage {
+            height:100%;
+            width:100%;
+            .imgOute{
+                @include clip-path(url("#featuredBoxClipingBg"));
+                @include radius(10px);
+                height: 170px;
+                background-color: $white;
+                overflow: hidden;
+                img {
+                    @include clip-path(url("#featuredBoxClipingImg"));
+                    height: 100%;
+                    object-fit: cover;
+                    min-width: 100%;
+                }
+            }
+        }
+        .uploadBtn { 
+            @include pos(r, null);
+            height:100%;
+            background-color: $blueBG ;
+            @include clip-path(url("#featuredBoxClipingImg"));
+            input[type="file"] {
+                @include height-width(100%, 100%);
+                @include pos(a, 0 auto auto 0); 
+                z-index: 1;
+                opacity: 0;
+                cursor: pointer;
+            }
+            span {
+                @include text-format-size(14px, $white,400);
+                line-height: 28px;
+                padding-top: 40px;
+                @include pos(r, null);
+                display: block;
+                @media screen and (max-width: 767px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+/* upload file box end */
+
+
+/* toggle radio start */
+.radio-toggle {
+    label {
+        &.z_checked {
+            @include pos(r, null);
+            cursor: pointer; 
+            span {
+                width: 50px;
+                height: 26px;
+                background-color: $color-c7;
+                @include clip-path(url("#radioSvg"));
+                @include radius(20px);
+                display: inline-block;
+                @include padding-left(30);
+                @include pos(r, null);
+                &:before {
+                    @include pos(a, 1px auto auto 1px);
+                    @include clip-path(url("#radiocircleSvg "));
+                    @include circle;
+
+                    background-color: white;
+                    content: "";
+
+                    @include square(24px);
+
+                    @include box-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+                }
+            }
+
+            input[type="checkbox"] {
+                @include pos(a, 0 auto auto 0);
+
+                visibility: hidden;
+
+                &:checked {
+                    & + span {
+                        background-color: $blueBG;
+
+                        &:before {
+                            @include pos(a, 1px 2px auto auto);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* toggle radio end */
+
+/* grey input feilds start */
+.form-group{    
+    &.greyInput{
+        margin-bottom: 20px;
+        label{
+            @include text-format-size(16px,$darkpurple,700);
+        }
+         &.searchInput{
+            &.form-group{
+                max-width: 190px;
+                display: inline-block;
+                margin-right: 10px;
+                @media screen and (max-width:1200px) {
+                    margin-bottom: 12px;
+                }
+                @media screen and (max-width:767px) {
+                    margin-right: 5px;
+                    margin-bottom: 10px;    
+                    max-width: 160px;
+                }
+                .inputBtn{
+                    border-left: 1px solid $color-b2;
+                }
+            }
+        }
+        .greyInputbox{
+            @include clip-path(url("#greyInputSvg"));
+            padding: 2px;
+            background-color: $color-d2;
+            @include pos(r, null);
+            input,select,textarea{
+                &.form-control{
+                    @include text-format(13px,$color-18);
+                    border:0 none;
+                    &.svginput{
+                        @include clip-path(url("#greyInputSvg"));
+                        background-color: $white;
+                        width: 100%;
+                        height: 44px;
+                            
+                            @include box-shadow-n(0, 0, 15px, rgba(0,0,0,0.2),'true');
+                    }
+                    &:focus{
+                        border:0 none;
+                    }
+                }            
+            }
+            .select-outer {
+                &:after {
+                    right: 15px;           
+                    font-size: 12px;        
+                    @media screen and (max-width: 1200px) {
+                        font-size: 10px;
+                    }
+                }      
+            }
+            &.smallinput{
+                @include clip-path(url("#greyInputsmallSvg"));
+                input,select,textarea{
+                    &.form-control{
+                        &.svginput{
+                            @include clip-path(url("#greyInputsmallSvg"));
+                        }
+                    }
+                }               
+            }
+        }
+    }
+}
+/* grey input feilds end */
+
+
+
+.inputfeildPage{
+    .feildSet {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.30);
+        padding-bottom: 15px;
+        @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+        }
+        &.last {
+            border: 0 none;
+        }
+        [class*="col-"]:nth-child(even) {
+            clear:right;
+        }
+        [class*="col-"]:nth-child(odd) {
+            clear:left;
+        }
+        .form-group {
+            @include pos(r, null);
+            margin-bottom: 20px;
+            .halfInput{
+                [class*="col-"] {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    @media screen and (max-width: 767px) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .inputtextpos{                  
+                width: 100%;
+                @include pos(r, null);
+                a{
+                    @include pos(a, calc(50% - 8px) 20px auto auto);
+                    text-decoration: underline;
+                    @media screen and (max-width:992px) {
+                        font-size: 12px;
+                    }
+                    @media screen and (max-width:767px) {
+                        font-size: 10px;
+                    }
+                }
+            }
+            label {
+                @include text-format-size(18px,$white,400);
+                line-height: 28px;
+                @media screen and (max-width:1200px) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+            input,select,textarea {
+                &.form-control {
+                    @include appear(none);
+                    border     : 0 none;
+                    @include text-format-size(16px,$textColor,400);
+                    @include radius(10px);
+                    @include box-shadow-none(none);
+                    padding    : 15px 30px;
+                    height     : 58px;
+                    @media screen and (max-width:1200px) {
+                        font-size: 14px;
+                        padding  :12px 25px 12px 15px;
+                    }
+                    &.svgInput {
+                        @include clip-path(url("#inputTyepTextClip"));
+                        background-color: $white;
+                        width           : 100%;
+                        height          : 50px;
+                    }
+                }
+            }
+            textarea{
+                &.form-control {
+                    &.svgInput {
+                        @include clip-path(url("#textareaSvg"));
+                        height          : 100px;
+                        overflow-y:auto; 
+                        &.largeInput{
+                            height:240px;
+                           @include clip-path(url("#largeTextareSvg")); 
+                        }
+                    }
+                }               
+            }
+            .optionsBox {
+                .optionsinner {
+                    float       : left;
+                    margin-right: 20px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    margin-right: 10px;                   
+                    width:calc(50% - 10px);
+                    @media screen and (max-width: 1200px) {
+                        margin-bottom: 0px;
+                        width:calc(33% - 25px);
+                    }
+                    @media screen and (max-width: 767px) {
+                        width:100%;
+                        margin-right: 0;
+                    }                
+                }
+            }
+            &.radio-outer {
+                label {
+                    &.z_checked {
+                        @include pos(r, null);
+                        margin: 0;
+                        text-align: left;
+                        @include text-format-size(16px,$white,400);
+                        line-height: 30px;
+                        @media screen and (max-width: 1200px) {
+                            font-size: 13px;
+                        }    
+                        span {
+                            @include padding-left(40);
+                            display: inline-block;
+                                line-height: 20px;
+                            @include pos(r, null);
+                            cursor: pointer;
+                            display:block;
+                            @media screen and (max-width: 1200px) {
+                                @include padding-left(30);
+                            }
+                            &:after {
+                                @include square(22px);
+                                 @include pos(a, -2px auto auto 6px);
+                                content: none;
+                                line-height: 22px;
+                                @include text-format(16px, $orange);
+                                font-family: $moonfamily;
+                                @media screen and (max-width: 1200px) {
+                                    font-size: 9px;
+                                    top: -1px;
+                                    left: 3px;
+                                }
+                            } 
+                            &:before {
+                                @include pos(a, 0px null null 0);
+                                content: "\e91b";
+                                @include text-format(30px, $white);
+                                font-family: $moonfamily;
+                                @media screen and (max-width: 1200px) {
+                                   font-size: 16px;
+                                }
+                            }                       
+                        }
+
+                        input[type="checkbox"] {
+                            @include pos(a, 0 auto auto 0);
+                            visibility: hidden;
+                            &:checked {
+                                & + span {
+                                    &:after {
+                                        content: '\e904';
+                                        background-image: none; 
+                                    }
+                                    &:before {                                  
+                                        background-image: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }       
+    .submitInput {
+        margin-top: 60px;
+        margin-bottom: 0;
+        @media screen and (max-width:767px) {
+            margin-top: 20px;
+        }
+        &.no-margin{
+             margin-top: 0px;
+        }
+        .button {
+            margin: 0 10px; 
+            @media screen and (max-width:767px) {
+                margin: 5px;
+            }
+        }
+    }
+}
+
+
+/* upload profile file box start */
+.profilePhoto {
+    margin-bottom: 30px;
+    @include height-width(150px, 140px);
+    display: inline-block;
+    @media screen and (max-width:1200px) {
+         @include height-width(120px, 115px);
+    }
+    .imgOute{
+        @include radius(0px);
+        height: 100%;
+        background-color: transparent;
+        img {
+            @include clip-path(url("#circleImage"));
+            height: 100%;
+            object-fit: cover;
+            min-width: 100%;
+        }
+    }
+    .uploadBtn {
+        @include pos(r, -38px null null null);
+        margin:0 auto;
+        overflow: hidden; 
+        cursor: pointer;           
+        @include height-width(36px, 38px);
+        input[type="file"] {
+            @include height-width(100%, 100%);
+            @include pos(a, 0 auto auto 0); 
+            z-index: 1;
+            opacity: 0;
+            cursor: pointer;
+        }
+        span {
+            &.badge{
+                cursor: pointer;
+                @include clip-path(url("#circleImage"));
+                text-align: center;
+                 @include height-width(38px, 36px);
+                line-height: 40px;
+                background-color: $orange;
+                padding: 0;
+                i{
+                    @include text-format(16px, $white);
+                }
+            }               
+        }
+    }
+}
+/* upload profile file box end */
+
+
+
+.uploadStyleBtn{
+    @include pos(r, null);
+    overflow: hidden; 
+    cursor: pointer;  
+    display: inline-block;         
+    input[type="file"] {
+        @include height-width(100%, 100%);
+        @include pos(a, 0 auto auto 0); 
+        z-index: 1;
+        opacity: 0;
+        cursor: pointer;
+    }
+}

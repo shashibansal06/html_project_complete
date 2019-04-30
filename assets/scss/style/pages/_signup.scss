@@ -1,0 +1,262 @@
+.main-inner {
+    .loginpage {
+        .leftSide { 
+            padding-right: 105px;
+
+            @media screen and (max-width: 1200px) {
+                padding-right: 15px;
+            }
+
+            @media screen and (max-width: 767px) {
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                @include text-format-size(41px,$white,700);
+                @media screen and (max-width: 1200px) {
+                    font-size: 30px;
+                }
+
+                @media screen and (max-width: 767px) {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                @include text-format-size(16px,$white,400);
+                line-height: 28px;
+                @media screen and (max-width: 1200px) {
+                    font-size: 14px;
+                    line-height: 26px;
+                }
+            }
+        }
+        .rightSide {
+            padding: 0;
+            float: right;
+            max-width: 459px;
+            @media screen and (max-width: 767px) {
+                float: none;
+                padding: 0 15px;
+            }
+            .rightinner {
+                background-color: $orange;
+                @include pos(r, null);
+                &:after,
+                &:before {
+                    @include pos(a, 0 auto auto 0);
+                    content: '';
+                    background: {
+                        image: url("#{$image-path}/leftSidelogin.png");
+                        repeat: repeat-y;
+                    };
+                    @include height-width(100%, 10px);
+                    z-index: 9;
+                }
+
+                &:after {
+                    background-image: url("#{$image-path}/rightSidelogin.png");
+                    right: 0;
+                    left: auto;
+                }
+
+                .loginBgBox {
+                    @include pos(r, null);
+                    position: absolute;
+                    @include height-width(100%, 100%);
+                    &:after,
+                    &:before {
+                        @include pos(a, 0 auto auto 0);
+                        content: '';
+                        background: {
+                            image: url("#{$image-path}/topSidelogin.png"); 
+                            repeat: repeat-y; 
+                        }; 
+                        @include height-width(10px, 100%);
+                        z-index: 9;
+                    }
+
+                    &:after {
+                        background-image: url("#{$image-path}/bottomlogin.png");
+                        bottom: -43px;
+                        top: auto;
+                        height: 50px;
+                    }
+                }
+
+                .title {
+                    @include text-format-size(26px,$white,700);
+                    line-height: 24px;
+                    text-transform: capitalize;
+                    padding: 30px 47px;
+                    border-bottom: 2px solid lighten($orange, 35%);
+                    margin: 0;
+                    @media screen and (max-width: 1200px) {
+                        padding: 25px 30px;
+                        font-size: 20px;
+                    }
+                    @media screen and (max-width: 767px) {
+                        padding: 20px 30px 10px;
+                        font-size: 17px;
+                    }
+                }
+
+                .feildSection {
+                    padding: 35px 47px;
+                    @media screen and (max-width: 1200px) {
+                        padding: 20px 30px;
+                    }
+                    .loginLinks {
+                        margin-bottom: 30px;
+                        @media screen and (max-width: 1200px) {
+                            margin-bottom: 20px;
+                        }
+                        a {
+                            @include text-format-size(20px,$white,400);
+                            line-height: 24px;
+                            text-transform: capitalize;
+                            @include pos(r, null);
+                            display: inline-block;
+                            padding-bottom: 10px;
+                            overflow: hidden;
+                            @media screen and (max-width: 992px) {
+                                font-size: 16px;
+                            }
+                            &:before {
+                                @include pos(a, auto auto 0 0);
+                                content: '';
+                                @include height-width(4px, 100%);
+                                background-color: $white;
+                                @include translateX(-100%);
+                                @include transitionLinear(0.2s);
+                            }
+
+                            &.active,
+                            &:hover {
+                                &:before {
+                                    @include translateX(0);
+                                }
+                            }
+                        }
+                    }
+
+                    .form-group {
+                        margin-bottom: 10px;                        
+                        .form-control {
+                            @include appear(none);
+                            border: 0 none;
+                            @include text-format(16px, $color-2f);
+                            @include radius(10px);
+                            @include box-shadow-none(none);
+                            padding: 6px 25px;
+                            height: 50px;
+
+                            @media screen and (max-width: 767px) {
+                                padding: 6px 15px;
+                            }
+                        }
+
+                        &.submitInput {
+                            margin-top: 20px;
+                        }
+                        ._buttonGroup {
+                            @include clip-path(url("#largeButtonClip"));
+
+                            @include pos(r, null);
+
+                            @include radius(5px);
+
+                            padding: 3px;
+                            background-color: $white;
+                            margin-top: 20px;
+                        }
+                        .forget-pswd {
+                            text-align: right;
+                            a {
+                                @include text-format(15px, $color-fa);
+
+                                @media screen and (max-width: 992px) {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            @media screen and (max-width: 992px) {
+                                text-align: left;
+                            }
+                        }
+                        .svgInput {
+                            @include clip-path(url("#inputTyepTextClip"));
+                            background-color: $white;
+                            width: 100%;
+                            height: 50px;
+                        }
+                        &.radio-outer {
+                            label {
+                                &.z_checked {
+                                    @include pos(r, null);
+                                    @include text-format-size(14px, $color-fa,400);
+                                    @media screen and (max-width: 1200px) {
+                                        font-size: 12px;
+                                    }
+
+                                    span {
+                                        @include padding-left(35);
+                                        @include pos(r, null);
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        @media screen and (max-width: 1200px) {
+                                            @include padding-left(25);
+                                        }
+                                        &:after {
+                                            @include pos(a, -6px auto auto 0);
+                                            content: '\e90c';
+                                            @include text-format(22px, $white);
+                                            font-family: $moonfamily;
+                                            @media screen and (max-width: 1200px) {
+                                                font-size: 15px;
+                                                top: -4px;
+                                            }
+                                        }
+
+                                        &:before {
+                                            @include pos(a, -2px auto auto 0);
+
+                                            content: "";
+
+                                            @include square(22px);
+
+                                            @media screen and (max-width: 1400px) {
+                                                @include square(18px);
+
+                                                top: 1px;
+                                            }
+                                        }
+
+                                        a {
+                                            color: $color-fa;
+                                            text-decoration: underline;
+                                        }
+                                    }
+
+                                    input[type="checkbox"] {
+                                        @include pos(a, 0 auto auto 0);
+
+                                        visibility: hidden;
+
+                                        &:checked {
+                                            & + span {
+                                                &:after {
+                                                    content: "\e909";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

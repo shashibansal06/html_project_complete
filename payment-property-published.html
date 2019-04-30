@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+		<title>Match My House | payment property published page</title>
+		<link type="text/css" href="assets/css/style.css" rel="stylesheet">
+		<!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	</head>
+	<body class="body">
+		<div id="mainWrapper">
+			<!-- Includes Header -->
+			<div id="include-header" w3-include-html="./includes/header-before-login.html"></div>
+			<!-- Includes Header -->
+			<!-- main section starts -->
+			<div class="main-inner">
+				<div class="blueBackground topSpacing paymentStatus addpropertyPage">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-6 text-right backright">
+								<a href="#"><i class="icon-leftarrow"></i> Back</a>
+							</div>
+						</div>
+						<div class="PageSection">							
+							<div class="row text-center">
+								<div class="col-sm-12">  
+									<div class="icon">
+										<i class="icon-success"></i>
+									</div>
+									<h1>Payment Successful</h1>
+									<h2>Thank You for the payment. Your properties has been published successfully.</h2>										
+								</div>
+								<div class="col-sm-12 tranctionInfo">
+									<p>Amount : <span>$45</span></p>
+									<p>Transaction ID : <span>834392239344</span></p>										
+									<p>Method : <span>Card 4547 XXXX XXXX 8848</span></p>
+								</div>									
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- main section ends -->
+			<!-- Includes Footer -->
+			<div id="include-footer" w3-include-html="./includes/footer.html"></div>
+			<!-- Includes Footer -->
+			<!-- All SVG Import -->
+			<div id="include-svgClip" w3-include-html="./includes/svg-clip.html"></div>
+			<!-- All SVG Import -->
+		</div>
+	<script>
+		//includeHTML();
+		$(document).ready(function () {
+			$("#include-header").load("includes/header-after-login.html");
+			$("#include-footer").load("includes/footer.html");
+			$("#include-svgClip").load("includes/svg-clip.html");
+		});
+	</script>
+</body>
+</html>

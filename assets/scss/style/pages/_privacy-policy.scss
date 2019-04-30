@@ -1,0 +1,23 @@
+.privacyPage{
+	h1 {
+        @include text-format-size(28px,$white,700);
+        line-height   : 24px;
+        text-transform: capitalize;
+        padding       : 0;
+        margin        : 0;
+        @media screen and (max-width:1200px) {
+            font-size: 20px;
+        }
+    }
+    p {
+        color:$white;
+        line-height   : 27px;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        @media screen and (max-width:1200px) {
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 20px;
+        }
+    }
+}
